@@ -21,6 +21,7 @@ def play(values_list):
     # The puzzleNumber sets a seed so either generate
     # a random number to fill in here or accept user
     # input for a duplicatable puzzle.
+    fid = 0
 
     for values in values_list:
         pygame.event.pump()
@@ -52,6 +53,8 @@ def play(values_list):
 
         pygame.display.flip()
         pygame.display.update()
+        pygame.image.save(screen,'./animation_image/screen{:04d}.png'.format(fid))
+        fid+=1
         clock.tick(5)
 
     # leave game showing until closed by user
